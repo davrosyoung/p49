@@ -1,5 +1,6 @@
 package au.com.polly.yikes;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,4 +15,16 @@ public class Account {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private int id;
+
+  @Column(name = "code")
+  private String code;
+
+  @Column(name = "parent_id")
+  private int parentId;
+
+  @Column(name="created")
+  private Date created;
+
+  @Column(name="upated")
+  private Date updated;
 }

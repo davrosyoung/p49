@@ -15,5 +15,9 @@ CREATE TABLE "user" (
     surname text not null,
     description text,
     email text,
-    mobile text
+    mobile text,
+    created timestamp,
+    updated timestamp
 );
+
+cre
