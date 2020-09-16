@@ -1,13 +1,20 @@
+CREATE TABLE id_generation (
+    id_name  TEXT NOT NULL,
+    id_value NUMERIC,
+    PRIMARY KEY (id_name)
+);
+INSERT INTO id_generation VALUES ('BaseEntity', 0);
+
 CREATE TABLE account
 (
     id integer primary key,
     code      text not null,
-    parent integer,
+    parent_id integer,
     created timestamp,
     updated timestamp
 );
 
-CREATE TABLE "user" (
+CREATE TABLE account_user (
     id integer primary key,
     account_id integer,
     login text not null,
@@ -20,4 +27,5 @@ CREATE TABLE "user" (
     updated timestamp
 );
 
-cre
+ALTER TABLE account_user ADD FOREIGN KEY (account_id) REFERENCES account(id);
+ CREATE INDEX account_user_account_id_idx ON account_user(account_id);
